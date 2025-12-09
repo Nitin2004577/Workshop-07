@@ -1,0 +1,54 @@
+
+@page "/monkeys"
+<link rel="stylesheet" href="css/monkeys.css" />
+    
+@code
+{
+    public class Monkey
+    {
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public string Image { get; set; }
+
+        public Monkey(string name, string location, string image)
+        {
+            Name = name;
+            Location = location;
+            Image = image;
+        }
+
+        
+       
+    }
+    // adding monkeys
+     List<Monkey> monkeys = new List<Monkey>
+        {
+            new Monkey("Baboon","Africa & Asia","https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/baboon.jpg"),
+            new Monkey("Capuchin Monkey","Central & South America","https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"),
+            new Monkey("Blue Monkey","Central & East Africa","https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/bluemonkey.jpg"),
+        };
+}
+
+<div>
+
+@if (monkeys == null || monkeys.Count == 0)
+{
+    <p>No Monkeys Found.</p>
+}
+else
+{
+<ul>
+  @foreach (var monkey in monkeys)
+ {
+     <li>
+           <div>
+           <h1>@monkey.Name</h1>
+           <p>@monkey.Location</p>
+           <img src="@monkey.Image" alt="@monkey.Name" style="width:200px;height:200px;"/>
+           </div>     
+     </li>
+
+ }
+ </ul>
+
+} </div>
