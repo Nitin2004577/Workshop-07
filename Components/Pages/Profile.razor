@@ -1,0 +1,16 @@
+@page "/profile"
+
+@code {
+    public string photoPath = "https://t3.ftcdn.net/jpg/04/39/64/66/240_F_439646649_qblIzOC8xrNyBR2pgbCuC60gIKoMZJzG.jpg";
+    public string studentName = "Ram parsad";
+    public string courseName = ".NET MAUI Hybrid Training";
+    public string batchYear = "2025";
+}
+
+<div>
+    <h1>Student Profile</h1>
+    <img src="@photoPath" alt="Student Photo"/>
+    <h2>@studentName</h2>
+    <p><strong>Course:</strong> @courseName</p>
+    <p><strong>Batch Year:</strong> @batchYear</p>
+</div>
